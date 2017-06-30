@@ -1,0 +1,17 @@
+Simple form in Main.html
+
+. = radio button
+* = selected
+
+.Makeup*
+.Skincare
+
+If (makeup){
+  .Foundation*
+  .Eyeshadow
+}
+
+If (Skincare){
+  .Facewash*
+  .Moisterizer
+}
