@@ -3,15 +3,15 @@ Simple form in Main.html
 . = radio button
 * = selected
 
-.Makeup*
+.Makeup
 .Skincare
 
 If (makeup){
-  .Foundation*
+  .Foundation
   .Eyeshadow
 }
 
 If (Skincare){
-  .Facewash*
+  .Facewash
   .Moisterizer
 }

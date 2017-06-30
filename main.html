@@ -8,13 +8,19 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <article id="mainArticle">
-      Hello World
-    </article>
+
     <form id="myForm">
+      Brand Name<input type="text" name="brand">Brand Name<br>
       <input type="radio" name="product_type" value="makeup" checked>Makeup<br>
       <input type="radio" name="product_type" value="skincare">Skincare<br>
-
+      <fieldset id="makeupInputs">
+        <input type="radio" name="makeup_type" value="foundation">Foundation<br>
+        <input type="radio" name="makeup_type" value="eyeshadow">Eyeshadow<br>
+      </fieldset>
+      <fieldset id="skincareInputs">
+        <input type="radio" name="skincare_type" value="facewash">Face Wash<br>
+        <input type="radio" name="skincare_type" value="moisterizer">Moisterizer<br>
+      </fieldset>
     </form>
 
     <span id="reporter"></span>
