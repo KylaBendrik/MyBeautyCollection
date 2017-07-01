@@ -10,16 +10,23 @@
   <body>
 
     <form id="myForm">
-      Brand Name<input type="text" name="brand">Brand Name<br>
+      Brand Name<input type="text" name="brand"><br>
       <input type="radio" name="product_type" value="makeup" checked>Makeup<br>
       <input type="radio" name="product_type" value="skincare">Skincare<br>
       <fieldset id="makeupInputs">
         <input type="radio" name="makeup_type" value="foundation">Foundation<br>
         <input type="radio" name="makeup_type" value="eyeshadow">Eyeshadow<br>
+        <input type="radio" name="makeup_type" value="eyeliner">Eyeliner<br>
       </fieldset>
       <fieldset id="skincareInputs">
         <input type="radio" name="skincare_type" value="facewash">Face Wash<br>
         <input type="radio" name="skincare_type" value="moisterizer">Moisterizer<br>
+      </fieldset>
+      Product Name<input type="text" name="product_name"><br>
+      Is there a detectable color? <input type="checkbox" name="hasColor" id="hasColor"><br>
+      <fieldset id="colorInputs">
+        Color Name:<input type="text" name="product_name"><br>
+        Color Picker (approximate):<input type="color" name="approx"><br>
       </fieldset>
     </form>
 

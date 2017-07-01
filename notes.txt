@@ -1,17 +1,30 @@
 Simple form in Main.html
 
-. = radio button
-* = selected
+const product = {
+  type: 'makeup',
+  hasColor: true
+};
 
-.Makeup
-.Skincare
-
-If (makeup){
-  .Foundation
-  .Eyeshadow
+if (product.type === makeup) {
+  foundation
+  eyeshadow
 }
 
-If (Skincare){
-  .Facewash
-  .Moisterizer
+if (product.type === skincare) {
+  facewash
+  moisturizer
 }
+
+if (product.type === hairdye) {
+  strength
+}
+
+name
+
+if (product.hasColor) {
+  color
+}
+
+color:
+Text box (brand name) 
+Hexadecimal/color picker approximation

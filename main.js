@@ -2,7 +2,8 @@ domready(() => {
   const thingInputs = document.querySelectorAll('input[name=product_type]');
   const makeupInputs = document.querySelector('#makeupInputs');
   const skincareInputs = document.querySelector('#skincareInputs');
-
+  const colorInputs = document.querySelector('#colorInputs');
+  const hasColor = document.querySelector('#hasColor');
 
   const displayValue = function(value) {
     if (value === 'makeup') {
@@ -13,6 +14,20 @@ domready(() => {
       skincareInputs.style.display = 'block';
     }
   };
+
+displayColor = function(checked) {
+  if (checked){
+    colorInputs.style.display = 'block';
+  } else {
+    colorInputs.style.display = 'none';
+  }
+}
+
+hasColor.addEventListener('change', _changeEvent => {
+  displayColor(hasColor.checked);
+})
+
+displayColor(hasColor.checked);
 
 for (const thing of thingInputs){
   thing.addEventListener('change', _inputEvent => {
