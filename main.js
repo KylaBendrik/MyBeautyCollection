@@ -51,7 +51,7 @@ domready(() => {
   displayValue1(document.querySelector('input[name=skincare_type]:checked').value);
 
   // color inputs
-  displayColor = function (checked) {
+  const displayColor = function (checked) {
     if (checked) {
       colorInputs.style.display = 'block';
     } else {
@@ -66,7 +66,7 @@ domready(() => {
   displayColor(hasColor.checked);
 
   // good stuff input
-  displayGood = function (checked) {
+  const displayGood = function (checked) {
     if (checked) {
       goodInputs.style.display = 'block';
     } else {
@@ -81,7 +81,7 @@ domready(() => {
   displayGood(isGood.checked);
 
   // warning stuff input
-  displayWarning = function (checked) {
+  const displayWarning = function (checked) {
     if (checked) {
       warningInputs.style.display = 'block';
     } else {
