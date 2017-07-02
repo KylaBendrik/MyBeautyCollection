@@ -11,6 +11,7 @@
 
     <form id="myForm">
       Brand Name<input type="text" name="brand"><br>
+      Product Name<input type="text" name="product"><br>
       <input type="radio" name="product_type" value="makeup" checked>Makeup<br>
       <input type="radio" name="product_type" value="skincare">Skincare<br>
       <fieldset id="makeupInputs">
@@ -21,13 +22,38 @@
       <fieldset id="skincareInputs">
         <input type="radio" name="skincare_type" value="facewash">Face Wash<br>
         <input type="radio" name="skincare_type" value="moisterizer">Moisterizer<br>
-        <input type="radio" name="skincare_type" value="moisterizer">Face Mask<br>
+        <input type="radio" name="skincare_type" value="facemask">Face Mask<br>
       </fieldset>
-      Product Name<input type="text" name="product_name"><br>
+      Claims/Description<input type="text" name="claim"><br>
       Is there a detectable color? <input type="checkbox" name="hasColor" id="hasColor"><br>
       <fieldset id="colorInputs">
         Color Name:<input type="text" name="product_name"><br>
         Color Picker (approximate):<input type="color" name="approx"><br>
+      </fieldset>
+      <fieldset id="maskInputs">
+        What kind of mask?<br>
+        <input type="radio" name="mask_type" value="sheet">Fabric or Paper Sheet Mask<br>
+        <input type="radio" name="mask_type" value="peel">Peel-off Mask<br>
+      </fieldset>
+      Natural/Organic/Vegan claims?<input type="checkbox" name="isNatural" id="isNatural"><br>
+      <fieldset id="lifeInputs">
+        Natural? <input type="text" name="natural"><br>
+        Made without:<br>
+        Parabens<input type="checkbox" name="parabens" id="parabens"><br>
+        SLS<input type="checkbox" name="parabens" id="parabens"><br>
+        Silicones<input type="checkbox" name="parabens" id="parabens"><br>
+        <br>
+        Cruelty Free?<input type="checkbox" name="cruelty" id="cruelty"><br>
+      </fieldset>
+      <fieldset id="ingredInputs">
+        Ingredients (in order)<input type="text" name="ingredients"><br>
+      </fieldset>
+      Are there any warnings?<input type="checkbox" name="warnings" id="warnings"><br>
+      <fieldset id="warningInputs">
+        External Use Only<input type="checkbox" name="external" id="external"><br>
+        Avoid contact with eyes<input type="checkbox" name="eyes" id="eyes"><br>
+        Stop use and contact a doctor if an adverse reaction occurs<input type="checkbox" name="doctor" id="doctor"><br>
+        Other<input type="text" name="otherWarnings"><br>
       </fieldset>
     </form>
 
