@@ -12,8 +12,8 @@ domready(() => {
   const warnings = document.querySelector('#warnings');
   const warningInputs = document.querySelector('#warningInputs');
 
-//product type
-  const displayValue = function(value) {
+  // product type
+  const displayValue = function (value) {
     if (value === 'makeup') {
       makeupInputs.style.display = 'block';
       skincareInputs.style.display = 'none';
@@ -25,16 +25,16 @@ domready(() => {
     }
   };
 
-  for (const thing of productInputs){
+  for (const thing of productInputs) {
     thing.addEventListener('change', _inputEvent => {
       displayValue(thing.value);
     });
   }
 
-  displayValue(document.querySelector ('input[name=product_type]:checked').value);
+  displayValue(document.querySelector('input[name=product_type]:checked').value);
 
-//mask inputs
-  const displayValue1 = function(value) {
+  // mask inputs
+  const displayValue1 = function (value) {
     if (value === 'facemask') {
       maskInputs.style.display = 'block';
     } else {
@@ -42,57 +42,57 @@ domready(() => {
     }
   };
 
-  for (const thing of skincareInputs1){
+  for (const thing of skincareInputs1) {
     thing.addEventListener('change', _inputEvent => {
       displayValue1(thing.value);
     });
   }
 
-  displayValue1(document.querySelector ('input[name=skincare_type]:checked').value);
+  displayValue1(document.querySelector('input[name=skincare_type]:checked').value);
 
-//color inputs
-displayColor = function(checked) {
-  if (checked){
-    colorInputs.style.display = 'block';
-  } else {
-    colorInputs.style.display = 'none';
-  }
-}
+  // color inputs
+  displayColor = function (checked) {
+    if (checked) {
+      colorInputs.style.display = 'block';
+    } else {
+      colorInputs.style.display = 'none';
+    }
+  };
 
-hasColor.addEventListener('change', _changeEvent => {
+  hasColor.addEventListener('change', _changeEvent => {
+    displayColor(hasColor.checked);
+  });
+
   displayColor(hasColor.checked);
-})
 
-displayColor(hasColor.checked);
+  // good stuff input
+  displayGood = function (checked) {
+    if (checked) {
+      goodInputs.style.display = 'block';
+    } else {
+      goodInputs.style.display = 'none';
+    }
+  };
 
-//good stuff input
-displayGood = function(checked) {
-  if (checked){
-    goodInputs.style.display = 'block';
-  } else {
-    goodInputs.style.display = 'none';
-  }
-}
+  isGood.addEventListener('change', _changeEvent => {
+    displayGood(isGood.checked);
+  });
 
-isGood.addEventListener('change', _changeEvent => {
   displayGood(isGood.checked);
-})
 
-displayGood(isGood.checked);
+  // warning stuff input
+  displayWarning = function (checked) {
+    if (checked) {
+      warningInputs.style.display = 'block';
+    } else {
+      warningInputs.style.display = 'none';
+    }
+  };
 
-//warning stuff input
-displayWarning = function(checked) {
-  if (checked){
-    warningInputs.style.display = 'block';
-  } else {
-    warningInputs.style.display = 'none';
-  }
-}
+  warnings.addEventListener('change', _changeEvent => {
+    displayWarning(warnings.checked);
+  });
 
-warnings.addEventListener('change', _changeEvent => {
   displayWarning(warnings.checked);
-})
-
-displayWarning(warnings.checked);
 
 });
