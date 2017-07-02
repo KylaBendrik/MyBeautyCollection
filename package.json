@@ -1,0 +1,14 @@
+{
+  "name": "MyBeautyCollection",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:KylaBendrik/MyBeautyCollection.git",
+  "author": "Beth Jackson <Beth@AshtonFam.org>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint main.js"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.1"
+  }
+}
