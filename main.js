@@ -4,6 +4,7 @@ domready(() => {
   const skincareInputs = document.querySelector('#skincareInputs');
   const skincareInputs1 = document.querySelectorAll('input[name=skincare_type]');
   const maskInputs = document.querySelector('#maskInputs');
+  const benefitInputs = document.querySelector('#benefitInputs');
   const hasColor = document.querySelector('#hasColor');
   const colorInputs = document.querySelector('#colorInputs');
   const isGood = document.querySelector('#isGood');
@@ -16,9 +17,11 @@ domready(() => {
     if (value === 'makeup') {
       makeupInputs.style.display = 'block';
       skincareInputs.style.display = 'none';
+      benefitInputs.style.display = 'none';
     } else if (value === 'skincare') {
       makeupInputs.style.display = 'none';
       skincareInputs.style.display = 'block';
+      benefitInputs.style.display = 'block';
     }
   };
 
