@@ -3,9 +3,13 @@ domready(() => {
   const makeupInputs = document.querySelector('#makeupInputs');
   const skincareInputs = document.querySelector('#skincareInputs');
   const skincareInputs1 = document.querySelectorAll('input[name=skincare_type]');
-  const colorInputs = document.querySelector('#colorInputs');
   const maskInputs = document.querySelector('#maskInputs');
   const hasColor = document.querySelector('#hasColor');
+  const colorInputs = document.querySelector('#colorInputs');
+  const isGood = document.querySelector('#isGood');
+  const goodInputs = document.querySelector('#goodInputs');
+  const warnings = document.querySelector('#warnings');
+  const warningInputs = document.querySelector('#warningInputs');
 
 //product type
   const displayValue = function(value) {
@@ -58,7 +62,34 @@ hasColor.addEventListener('change', _changeEvent => {
 
 displayColor(hasColor.checked);
 
+//good stuff input
+displayGood = function(checked) {
+  if (checked){
+    goodInputs.style.display = 'block';
+  } else {
+    goodInputs.style.display = 'none';
+  }
+}
 
+isGood.addEventListener('change', _changeEvent => {
+  displayGood(isGood.checked);
+})
 
+displayGood(isGood.checked);
+
+//warning stuff input
+displayWarning = function(checked) {
+  if (checked){
+    warningInputs.style.display = 'block';
+  } else {
+    warningInputs.style.display = 'none';
+  }
+}
+
+warnings.addEventListener('change', _changeEvent => {
+  displayWarning(warnings.checked);
+})
+
+displayWarning(warnings.checked);
 
 });
