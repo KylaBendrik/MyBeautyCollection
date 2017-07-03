@@ -11,6 +11,8 @@ domready(() => {
   const goodInputs = document.querySelector('#goodInputs');
   const warnings = document.querySelector('#warnings');
   const warningInputs = document.querySelector('#warningInputs');
+  const ifBad = document.querySelector('#ifBad');
+  const badReaction= document.querySelector('#badReaction');
 
   // product type
   const displayValue = function (value) {
@@ -94,5 +96,20 @@ domready(() => {
   });
 
   displayWarning(warnings.checked);
+
+  //bad reaction inputs
+  const displayBadReaction = function (checked) {
+    if (checked) {
+      badReaction.style.display = 'block';
+    } else {
+      badReaction.style.display = 'none';
+    }
+  }
+
+  ifBad.addEventListener('change', _changeEvent => {
+    displayBadReaction(ifBad.checked);
+  });
+
+  displayBadReaction(ifBad.checked);
 
 });
