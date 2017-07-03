@@ -20,12 +20,20 @@ domready(() => {
       makeupInputs.style.display = 'block';
       skincareInputs.style.display = 'none';
       benefitInputs.style.display = 'none';
-      document.getElementById("hasColor").checked = true
+      if (hasColor.checked){
+
+      } else {
+        document.getElementById("hasColor").click();
+      }
     } else if (value === 'skincare') {
       makeupInputs.style.display = 'none';
       skincareInputs.style.display = 'block';
       benefitInputs.style.display = 'block';
-      document.getElementById("hasColor").checked = false
+      if (hasColor.checked){
+        document.getElementById("hasColor").click();
+      } else {
+        
+      }
     }
   };
 
