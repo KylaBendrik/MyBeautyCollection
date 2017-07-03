@@ -1,6 +1,7 @@
 domready(() => {
   const productInputs = document.querySelectorAll('input[name=product_type]');
   const makeupInputs = document.querySelector('#makeupInputs');
+  const makeupInputs1 = document.querySelectorAll('input[name=makeup_type]');
   const skincareInputs = document.querySelector('#skincareInputs');
   const skincareInputs1 = document.querySelectorAll('input[name=skincare_type]');
   const maskInputs = document.querySelector('#maskInputs');
@@ -13,6 +14,7 @@ domready(() => {
   const warningInputs = document.querySelector('#warningInputs');
   const ifBad = document.querySelector('#ifBad');
   const badReaction= document.querySelector('#badReaction');
+  const defaultColor = document.querySelector('#colorPicker')
 
   // product type
   const displayValue = function (value) {
@@ -31,8 +33,6 @@ domready(() => {
       benefitInputs.style.display = 'block';
       if (hasColor.checked){
         document.getElementById("hasColor").click();
-      } else {
-        
       }
     }
   };
@@ -76,6 +76,18 @@ domready(() => {
   });
 
   displayColor(hasColor.checked);
+
+  const colorPicker = function (value) {
+    if (value === "foundation") {
+      defaultColor.value = "#ecba99"
+    } else {
+      defaultColor.value = "#000000"
+    }
+  }
+
+//  if (document.querySelector('#foundation').) {
+//    document.querySelector('#colorPicker').value = "#ecba99"
+//  }
 
   // good stuff input
   const displayGood = function (checked) {
