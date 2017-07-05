@@ -86,9 +86,18 @@ domready(() => {
     if (value === "foundation") {
       console.log ("foundation");
       colorPicker.value = "#ecba99";
-    } else {
+      document.querySelector('#foundationClaims').style.display = 'block';
+      document.querySelector('#eyeshadowClaims').style.display = 'none';
+    } else if (value === 'eyeshadow'){
+      console.log ("eyeshadow");
+      colorPicker.value = "#000000";
+      document.querySelector('#foundationClaims').style.display = 'none';
+      document.querySelector('#eyeshadowClaims').style.display = 'block';
+    } else{
       console.log ("other");
       colorPicker.value = "#000000";
+      document.querySelector('#foundationClaims').style.display = 'none';
+      document.querySelector('#eyeshadowClaims').style.display = 'none';
     }
   };
 
