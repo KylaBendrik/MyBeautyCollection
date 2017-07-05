@@ -17,7 +17,9 @@ domready(() => {
   const warningInputs = document.querySelector('#warningInputs');
   const ifBad = document.querySelector('#ifBad');
   const badReaction= document.querySelector('#badReaction');
-  const colorPicker = document.querySelector('#colorPicker')
+  const colorPicker = document.querySelector('#colorPicker');
+  const hasUsed = document.querySelector('#hasUsed');
+  const reviewInputs = document.querySelector('#review');
 
   // product type
   const displayValue = function (value) {
@@ -80,10 +82,7 @@ domready(() => {
 
   displayColor(hasColor.checked);
 
-console.log ("start color picker");
-
   const defaultColor = function (value) {
-    console.log ("default function");
     if (value === "foundation") {
       console.log ("foundation");
       colorPicker.value = "#ecba99";
@@ -94,13 +93,9 @@ console.log ("start color picker");
   };
 
     defaultColor(makeupInputs.value);
-console.log (makeupTypes.length)
-
-//defaultColor(makeupTypes[i].value);
 
 makeupTypes.forEach(function (element, index){
   element.addEventListener("click", function(){
-    console.log ("you clicked button with value " + makeupTypes[index].value);
     defaultColor(makeupTypes[index].value)
   });
 });
@@ -139,6 +134,22 @@ makeupTypes.forEach(function (element, index){
   });
 
   displayWarning(warnings.checked);
+
+//review questions
+
+const displayReview = function (checked) {
+  if (checked) {
+    reviewInputs.style.display = 'block';
+  } else {
+    reviewInputs.style.display = 'none';
+  }
+};
+
+hasUsed.addEventListener('change', _changeEvent => {
+  displayReview(hasUsed.checked);
+});
+
+displayReview(hasUsed.checked);
 
   //bad reaction inputs
   const displayBadReaction = function (checked) {

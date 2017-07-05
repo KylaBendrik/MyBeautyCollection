@@ -95,21 +95,23 @@
         Height<input type="text" name="height"><br>
       </fieldset>
       <br>
-      Review Questions:
+      Have you used this product? <input type="checkbox" name="hasUsed" id="hasUsed">
       <fieldset id=review>
+        Review Questions:
         Please give a detailed review of your experience using this product.<br>
         Did the claims hold up?<input type="text" name="review"><br>
+        Did you have any bad reactions to this product?<input type="checkbox" name="ifBad" id="ifBad">
+        <fieldset id=badReaction>
+          Breakout<input type="checkbox" name="reaction" id="breakout">
+          Dry Skin<input type="checkbox" name="reaction" id="dryskin">
+          Burning<input type="checkbox" name="reaction" id="burning">
+          Itching<input type="checkbox" name="reaction" id="itching">
+          Headache<input type="checkbox" name="reaction" id="headache">
+          Nausea<input type="checkbox" name="reaction" id="nausea">
+          Other<input type="text" name="reactiontext" id="other">
+        </fieldset>
       </fieldset>
-      Did you have any bad reactions to this product?<input type="checkbox" name="ifBad" id="ifBad">
-      <fieldset id=badReaction>
-        Breakout<input type="checkbox" name="reaction" id="breakout">
-        Dry Skin<input type="checkbox" name="reaction" id="dryskin">
-        Burning<input type="checkbox" name="reaction" id="burning">
-        Itching<input type="checkbox" name="reaction" id="itching">
-        Headache<input type="checkbox" name="reaction" id="headache">
-        Nausea<input type="checkbox" name="reaction" id="nausea">
-        Other<input type="text" name="reactiontext" id="other">
-      </fieldset>
+
     </form>
 
     <span id="reporter"></span>
