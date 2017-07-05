@@ -27,6 +27,13 @@
         <input type="radio" name="skincare_type" value="facemask">Face Mask<br>
       </fieldset>
       Description<input type="text" name="claim"><br>
+      Is there a detectable color? <input type="checkbox" name="hasColor" id="hasColor"><br>
+      <fieldset id="colorInputs">
+        Color Name:<input type="text" name="product_name"><br>
+        Color Picker (approximate):<input type="color" name="colorPicker" id="colorPicker"><br>
+        Duochrome?<input type="checkbox" name="duochrome"><br>
+        In future, if duochrome, a second color picker will pop up.<br>
+      </fieldset>
       Claims:
       <fieldset id="claimsInputs">
         I'm going to make this in what is probably not the best way, but it's all I can figure out for now. Feel free to meddle. (select foundation or eyeshadow)<br>
@@ -40,13 +47,14 @@
           High Pigmentation 2<input type="checkbox" name="claims" value="hiPig2"><br>
           No Fallout <input type="checkbox" name="claims" value="fallout"><br>
         </fieldset>
-      </fieldset>
-      Is there a detectable color? <input type="checkbox" name="hasColor" id="hasColor"><br>
-      <fieldset id="colorInputs">
-        Color Name:<input type="text" name="product_name"><br>
-        Color Picker (approximate):<input type="color" name="colorPicker" id="colorPicker"><br>
-        Duochrome?<input type="checkbox" name="duochrome"><br>
-        In future, if duochrome, a second color picker will pop up.<br>
+        <fieldset id="benefitInputs">
+          Benefits:<br>
+          Glow boosting<input type="checkbox" name="skinBenefits" id="glow"><br>
+          Hydrating<input type="checkbox" name="skinBenefits" id="hydrating"><br>
+          Detoxifying<input type="checkbox" name="skinBenefits" id="detoxifying"><br>
+          Pore Control<input type="checkbox" name="skinBenefits" id="pore"><br>
+          Calming<input type="checkbox" name="skinBenefits" id="calming"><br>
+        </fieldset>
       </fieldset>
       <fieldset id="textureInputs">
         Texture:<br>
@@ -62,14 +70,7 @@
         <input type="radio" name="mask_type" value="sheet">Fabric or Paper Sheet Mask<br>
         <input type="radio" name="mask_type" value="peel">Peel-off Mask<br>
       </fieldset>
-      <fieldset id="benefitInputs">
-        Benefits:<br>
-        Glow boosting<input type="checkbox" name="skinBenefits" id="glow"><br>
-        Hydrating<input type="checkbox" name="skinBenefits" id="hydrating"><br>
-        Detoxifying<input type="checkbox" name="skinBenefits" id="detoxifying"><br>
-        Pore Control<input type="checkbox" name="skinBenefits" id="pore"><br>
-        Calming<input type="checkbox" name="skinBenefits" id="calming"><br>
-      </fieldset>
+
       Natural/Organic/Vegan claims?<input type="checkbox" name="isGood" id="isGood"><br>
       <fieldset id="goodInputs">
         Natural? 100%<input type="checkbox" name="natural100" id="natural100"> or other <input type="text" name="natural">%<br>
