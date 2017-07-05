@@ -2,6 +2,7 @@ domready(() => {
   const productInputs = document.querySelectorAll('input[name=product_type]');
   const makeupInputs = document.querySelector('#makeupInputs');
   const makeupInputs1 = document.querySelectorAll('input[name=makeup_type]');
+  const makeupType = document.getElementsByClassName('makeup_type')
   const skincareInputs = document.querySelector('#skincareInputs');
   const skincareInputs1 = document.querySelectorAll('input[name=skincare_type]');
   const maskInputs = document.querySelector('#maskInputs');
@@ -77,19 +78,27 @@ domready(() => {
 
   displayColor(hasColor.checked);
 
+console.log ("start color picker");
   const defaultColor = function (value) {
+    console.log ("default function");
     if (value === "foundation") {
+      console.log ("foundation");
       defaultColor.value = "#ecba99";
     } else {
+      console.log ("other");
       defaultColor.value = "#ff0000";
     }
   };
 
-  defaultColor.addEventListener('change', _changeEvent => {
+    defaultColor(makeupInputs.value);
+console.log (makeupType.length)
+for (var i=0; i < makeupType.length; i++){
+  makeupType[i].addEventListener('click', _changeEvent => {
+    console.log ("change");
     defaultColor(makeupInputs.value);
   });
+}
 
-  defaultColor(makeupInputs.value);
 
 //  if (document.querySelector('#foundation').) {
 //    document.querySelector('#colorPicker').value = "#ecba99"
