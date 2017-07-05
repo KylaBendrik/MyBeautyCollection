@@ -14,7 +14,7 @@ domready(() => {
   const warningInputs = document.querySelector('#warningInputs');
   const ifBad = document.querySelector('#ifBad');
   const badReaction= document.querySelector('#badReaction');
-  const defaultColor = document.querySelector('#colorPicker')
+  const colorPicker = document.querySelector('#colorPicker')
 
   // product type
   const displayValue = function (value) {
@@ -77,13 +77,19 @@ domready(() => {
 
   displayColor(hasColor.checked);
 
-  const colorPicker = function (value) {
+  const defaultColor = function (value) {
     if (value === "foundation") {
-      defaultColor.value = "#ecba99"
+      defaultColor.value = "#ecba99";
     } else {
-      defaultColor.value = "#000000"
+      defaultColor.value = "#ff0000";
     }
-  }
+  };
+
+  defaultColor.addEventListener('change', _changeEvent => {
+    defaultColor(makeupInputs.value);
+  });
+
+  defaultColor(makeupInputs.value);
 
 //  if (document.querySelector('#foundation').) {
 //    document.querySelector('#colorPicker').value = "#ecba99"
