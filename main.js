@@ -2,7 +2,9 @@ domready(() => {
   const productInputs = document.querySelectorAll('input[name=product_type]');
   const makeupInputs = document.querySelector('#makeupInputs');
   const makeupInputs1 = document.querySelectorAll('input[name=makeup_type]');
-  const makeupType = document.getElementsByClassName('makeup_type')
+  //going almost directly from answer from
+  //https://stackoverflow.com/questions/39452193/loop-through-array-and-add-event-listener-click-to-each
+  var makeupTypes = [].slice.call(document.getElementsByClassName('makeup_type'));
   const skincareInputs = document.querySelector('#skincareInputs');
   const skincareInputs1 = document.querySelectorAll('input[name=skincare_type]');
   const maskInputs = document.querySelector('#maskInputs');
@@ -79,25 +81,29 @@ domready(() => {
   displayColor(hasColor.checked);
 
 console.log ("start color picker");
+
   const defaultColor = function (value) {
     console.log ("default function");
     if (value === "foundation") {
       console.log ("foundation");
-      defaultColor.value = "#ecba99";
+      colorPicker.value = "#ecba99";
     } else {
       console.log ("other");
-      defaultColor.value = "#ff0000";
+      colorPicker.value = "#ff0000";
     }
   };
 
     defaultColor(makeupInputs.value);
-console.log (makeupType.length)
-for (var i=0; i < makeupType.length; i++){
-  makeupType[i].addEventListener('click', _changeEvent => {
-    console.log ("change");
-    defaultColor(makeupInputs.value);
+console.log (makeupTypes.length)
+
+//defaultColor(makeupTypes[i].value);
+
+makeupTypes.forEach(function (element, index){
+  element.addEventListener("click", function(){
+    console.log ("you clicked button with value " + makeupTypes[index].value);
+    defaultColor(makeupTypes[index].value)
   });
-}
+});
 
 
 //  if (document.querySelector('#foundation').) {
