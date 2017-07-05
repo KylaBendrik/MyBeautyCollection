@@ -89,7 +89,7 @@ console.log ("start color picker");
       colorPicker.value = "#ecba99";
     } else {
       console.log ("other");
-      colorPicker.value = "#ff0000";
+      colorPicker.value = "#000000";
     }
   };
 
