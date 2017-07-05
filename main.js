@@ -93,37 +93,38 @@ function colorOff (checked) {
 
   displayColor(hasColor.checked);
 
-  document.querySelector('#foundationClaims').style.display = 'none';
-  document.querySelector('#eyeshadowClaims').style.display = 'none';
+  function foundationClaimsOff() {document.querySelector('#foundationClaims').style.display = 'none'};
+  function eyeshadowClaimsOff() {document.querySelector('#eyeshadowClaims').style.display = 'none'};
+  function allClaimsOff()  {
+    foundationClaimsOff();
+    eyeshadowClaimsOff();
+  }
 
   const defaultColor = function (value) {
     if (value === "foundation") {
       console.log ("foundation");
       colorPicker.value = "#ecba99";
       document.querySelector('#foundationClaims').style.display = 'block';
-      document.querySelector('#eyeshadowClaims').style.display = 'none';
+      eyeshadowClaimsOff();
       colorOn (hasColor.checked);
     } else if (value === 'eyeshadow'){
       console.log ("eyeshadow");
       colorPicker.value = "#000000";
-      document.querySelector('#foundationClaims').style.display = 'none';
+      foundationClaimsOff()
       document.querySelector('#eyeshadowClaims').style.display = 'block';
       colorOn (hasColor.checked);
     } else if (value === "concealer") {
       console.log ("concealer");
       colorPicker.value = "#ecba99";
-      document.querySelector('#foundationClaims').style.display = 'none';
-      document.querySelector('#eyeshadowClaims').style.display = 'none';
+      allClaimsOff();
       colorOn (hasColor.checked);
     } else if (value === "primer") {
       console.log ("primer");
-      document.querySelector('#foundationClaims').style.display = 'none';
-      document.querySelector('#eyeshadowClaims').style.display = 'none';
+      allClaimsOff();
       colorOff (hasColor.checked);
     } else{
       console.log ("other");
-      document.querySelector('#foundationClaims').style.display = 'none';
-      document.querySelector('#eyeshadowClaims').style.display = 'none';
+      allClaimsOff();
       colorPicker.value = "#000000";
       colorOn (hasColor.checked);
     }
