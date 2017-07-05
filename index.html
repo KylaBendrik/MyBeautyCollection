@@ -15,7 +15,9 @@
       <input type="radio" name="product_type" value="makeup" checked>Makeup<br>
       <input type="radio" name="product_type" value="skincare">Skincare<br>
       <fieldset id="makeupInputs">
+        <input type="radio" class="makeup_type" name="makeup_type" value="primer">Primer (this should turn off colors by default)<br>
         <input type="radio" class="makeup_type" name="makeup_type" value="foundation">Foundation<br>
+        <input type="radio" class="makeup_type" name="makeup_type" value="primer">Concealer<br>
         <input type="radio" class="makeup_type" name="makeup_type" value="eyeshadow">Eyeshadow<br>
         <input type="radio" class="makeup_type" name="makeup_type" value="eyeliner">Eyeliner<br>
       </fieldset>
@@ -51,9 +53,9 @@
         <input type="radio" name="texture_type" value="matte" checked>Matte<br>
         <input type="radio" name="texture_type" value="natural">Natural<br>
         <input type="radio" name="texture_type" value="dewy">Dewy<br>
-        <input type="radio" name="texture_type" value="glossy">Glossy/Oily/Shiny<br>
-        <input type="radio" name="texture_type" value="metallic">Metallic<br>
-        <input type="radio" name="texture_type" value="glittery">Glittery<br>
+        <input type="radio" name="texture_type" value="glossy">Glossy<br>
+        <input type="radio" name="texture_type" value="metallic">Metallic (should not show for foundation, primer, concealer)<br>
+        <input type="radio" name="texture_type" value="glittery">Glittery (should not show for foundation, primer, concealer)<br>
       </fieldset>
       <fieldset id="maskInputs">
         What kind of mask?<br>
@@ -113,7 +115,7 @@
       <fieldset id=review>
         Review Questions:
         Please give a detailed review of your experience using this product.<br>
-        Did the claims hold up?<input type="text" name="review"><br>
+        Did the claims hold up? (can we have a generated list of the claims (including texture) with checkmarks?)<input type="text" name="review"><br>
         Did you have any bad reactions to this product?<input type="checkbox" name="ifBad" id="ifBad">
         <fieldset id=badReaction>
           Breakout<input type="checkbox" name="reaction" id="breakout">

@@ -82,6 +82,9 @@ domready(() => {
 
   displayColor(hasColor.checked);
 
+  document.querySelector('#foundationClaims').style.display = 'none';
+  document.querySelector('#eyeshadowClaims').style.display = 'none';
+
   const defaultColor = function (value) {
     if (value === "foundation") {
       console.log ("foundation");
@@ -93,11 +96,23 @@ domready(() => {
       colorPicker.value = "#000000";
       document.querySelector('#foundationClaims').style.display = 'none';
       document.querySelector('#eyeshadowClaims').style.display = 'block';
-    } else{
-      console.log ("other");
-      colorPicker.value = "#000000";
+    } else if (value === "concealer") {
+      console.log ("concealer");
+      colorPicker.value = "#ecba99";
       document.querySelector('#foundationClaims').style.display = 'none';
       document.querySelector('#eyeshadowClaims').style.display = 'none';
+    } else if (value === "primer") {
+      console.log ("primer");
+      document.querySelector('#foundationClaims').style.display = 'none';
+      document.querySelector('#eyeshadowClaims').style.display = 'none';
+      //if (hasColor.checked){
+      //  document.getElementById("hasColor").click();
+      //}
+    } else{
+      console.log ("other");
+      document.querySelector('#foundationClaims').style.display = 'none';
+      document.querySelector('#eyeshadowClaims').style.display = 'none';
+      colorPicker.value = "#000000";
     }
   };
 
