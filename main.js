@@ -21,24 +21,35 @@ domready(() => {
   const hasUsed = document.querySelector('#hasUsed');
   const reviewInputs = document.querySelector('#review');
 
+function colorOn (checked) {
+  if (hasColor.checked){
+    console.log ("it's already on!");
+  } else {
+    document.getElementById("hasColor").click();
+    console.log ("I turned it on for ya. You're welcome.");
+  };
+};
+
+function colorOff (checked) {
+  if (hasColor.checked){
+    document.getElementById("hasColor").click();
+    console.log ("Oops. It's off now. <_<");
+  } else{
+    console.log ("It's off, like you wanted.");
+  };
+}
   // product type
   const displayValue = function (value) {
     if (value === 'makeup') {
       makeupInputs.style.display = 'block';
       skincareInputs.style.display = 'none';
       benefitInputs.style.display = 'none';
-      if (hasColor.checked){
-
-      } else {
-        document.getElementById("hasColor").click();
-      }
+      colorOn (hasColor.checked);
     } else if (value === 'skincare') {
       makeupInputs.style.display = 'none';
       skincareInputs.style.display = 'block';
       benefitInputs.style.display = 'block';
-      if (hasColor.checked){
-        document.getElementById("hasColor").click();
-      }
+      colorOff (hasColor.checked);
     }
   };
 
@@ -91,28 +102,30 @@ domready(() => {
       colorPicker.value = "#ecba99";
       document.querySelector('#foundationClaims').style.display = 'block';
       document.querySelector('#eyeshadowClaims').style.display = 'none';
+      colorOn (hasColor.checked);
     } else if (value === 'eyeshadow'){
       console.log ("eyeshadow");
       colorPicker.value = "#000000";
       document.querySelector('#foundationClaims').style.display = 'none';
       document.querySelector('#eyeshadowClaims').style.display = 'block';
+      colorOn (hasColor.checked);
     } else if (value === "concealer") {
       console.log ("concealer");
       colorPicker.value = "#ecba99";
       document.querySelector('#foundationClaims').style.display = 'none';
       document.querySelector('#eyeshadowClaims').style.display = 'none';
+      colorOn (hasColor.checked);
     } else if (value === "primer") {
       console.log ("primer");
       document.querySelector('#foundationClaims').style.display = 'none';
       document.querySelector('#eyeshadowClaims').style.display = 'none';
-      //if (hasColor.checked){
-      //  document.getElementById("hasColor").click();
-      //}
+      colorOff (hasColor.checked);
     } else{
       console.log ("other");
       document.querySelector('#foundationClaims').style.display = 'none';
       document.querySelector('#eyeshadowClaims').style.display = 'none';
       colorPicker.value = "#000000";
+      colorOn (hasColor.checked);
     }
   };
 
