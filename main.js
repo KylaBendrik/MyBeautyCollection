@@ -138,11 +138,6 @@ makeupTypes.forEach(function (element, index){
   });
 });
 
-
-//  if (document.querySelector('#foundation').) {
-//    document.querySelector('#colorPicker').value = "#ecba99"
-//  }
-
   // good stuff input
   const displayGood = function (checked) {
     if (checked) {

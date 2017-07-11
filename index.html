@@ -56,6 +56,13 @@
           Calming<input type="checkbox" name="skinBenefits" id="calming"><br>
         </fieldset>
       </fieldset>
+      <fieldset id="stateInputs">
+          <input type="radio" name="state_type" value="liquid" checked>Liquid<br>
+          <input type="radio" name="state_type" value="cream">Cream<br>
+          <input type="radio" name="state_type" value="cream">Pressed Powder<br>
+          <input type="radio" name="state_type" value="cream">Loose Powder<br>
+          Other <input type="text" name="state_type_other"><br>
+      </fieldset>
       <fieldset id="textureInputs">
         Texture:<br>
         <input type="radio" name="texture_type" value="matte" checked>Matte<br>
@@ -101,6 +108,7 @@
         Other<input type="text" name="otherWarnings"><br>
       </fieldset>
       <fieldset id="measurements">
+        Expiration time<input type="text" name="expiration"><br>
         #uses (mask only)<input type="text" name="uses"><br>
         Fluid Ounces (fl oz)<input type="text" name="floz"><br>
         Milliliters<input type="text" name="ml"><br>
@@ -126,6 +134,9 @@
           Headache<input type="checkbox" name="reaction" id="headache">
           Nausea<input type="checkbox" name="reaction" id="nausea">
           Other<input type="text" name="reactiontext" id="other">
+        </fieldset>
+        <fieldset id=foundationReview>
+          About how long did the foundation stay looking good? <input type="text" name="foundationLast">
         </fieldset>
       </fieldset>
 
