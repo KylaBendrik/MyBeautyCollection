@@ -5,6 +5,9 @@ Managing requests in node
 Connecting to Postgres
 Calling postgres
 
+when working on this, open two console windows:
+  with one, "npm start"
+  with the other, "http-server"
 
 refactoring JS
 webpack
