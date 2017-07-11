@@ -6,7 +6,8 @@
   "author": "Beth Jackson <Beth@AshtonFam.org>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint main.js"
+    "lint": "eslint main.js; exit 0",
+    "lint:fix": "eslint main.js --fix; exit 0"
   },
   "devDependencies": {
     "eslint": "^4.1.1"

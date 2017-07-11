@@ -1,30 +1,10 @@
-Simple form in Main.html
+Eslint
+  to run, "npm run lint" or "npm run lint:fix"
+npm scripts
+Managing requests in node
+Connecting to Postgres
+Calling postgres
 
-const product = {
-  type: 'makeup',
-  hasColor: true
-};
 
-if (product.type === makeup) {
-  foundation
-  eyeshadow
-}
-
-if (product.type === skincare) {
-  facewash
-  moisturizer
-}
-
-if (product.type === hairdye) {
-  strength
-}
-
-name
-
-if (product.hasColor) {
-  color
-}
-
-color:
-Text box (brand name) 
-Hexadecimal/color picker approximation
+refactoring JS
+webpack

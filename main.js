@@ -2,9 +2,10 @@ domready(() => {
   const productInputs = document.querySelectorAll('input[name=product_type]');
   const makeupInputs = document.querySelector('#makeupInputs');
   const makeupInputs1 = document.querySelectorAll('input[name=makeup_type]');
-  //going almost directly from answer from
-  //https://stackoverflow.com/questions/39452193/loop-through-array-and-add-event-listener-click-to-each
-  var makeupTypes = [].slice.call(document.getElementsByClassName('makeup_type'));
+
+  // going almost directly from answer from
+  // https://stackoverflow.com/questions/39452193/loop-through-array-and-add-event-listener-click-to-each
+  const makeupTypes = [].slice.call(document.getElementsByClassName('makeup_type'));
   const skincareInputs = document.querySelector('#skincareInputs');
   const skincareInputs1 = document.querySelectorAll('input[name=skincare_type]');
   const maskInputs = document.querySelector('#maskInputs');
@@ -21,35 +22,36 @@ domready(() => {
   const hasUsed = document.querySelector('#hasUsed');
   const reviewInputs = document.querySelector('#review');
 
-function colorOn (checked) {
-  if (hasColor.checked){
-    console.log ("it's already on!");
-  } else {
-    document.getElementById("hasColor").click();
-    console.log ("I turned it on for ya. You're welcome.");
-  };
-};
+  function colorOn(checked) {
+    if (hasColor.checked) {
+      console.log('it\'s already on!');
+    } else {
+      document.getElementById('hasColor').click();
+      console.log('I turned it on for ya. You\'re welcome.');
+    }
+  }
 
-function colorOff (checked) {
-  if (hasColor.checked){
-    document.getElementById("hasColor").click();
-    console.log ("Oops. It's off now. <_<");
-  } else{
-    console.log ("It's off, like you wanted.");
-  };
-}
+  function colorOff(checked) {
+    if (hasColor.checked) {
+      document.getElementById('hasColor').click();
+      console.log('Oops. It\'s off now. <_<');
+    } else {
+      console.log('It\'s off, like you wanted.');
+    }
+  }
+
   // product type
   const displayValue = function (value) {
     if (value === 'makeup') {
       makeupInputs.style.display = 'block';
       skincareInputs.style.display = 'none';
       benefitInputs.style.display = 'none';
-      colorOn (hasColor.checked);
+      colorOn(hasColor.checked);
     } else if (value === 'skincare') {
       makeupInputs.style.display = 'none';
       skincareInputs.style.display = 'block';
       benefitInputs.style.display = 'block';
-      colorOff (hasColor.checked);
+      colorOff(hasColor.checked);
     }
   };
 
@@ -93,50 +95,50 @@ function colorOff (checked) {
 
   displayColor(hasColor.checked);
 
-  function foundationClaimsOff() {document.querySelector('#foundationClaims').style.display = 'none'};
-  function eyeshadowClaimsOff() {document.querySelector('#eyeshadowClaims').style.display = 'none'};
-  function allClaimsOff()  {
+  function foundationClaimsOff() { document.querySelector('#foundationClaims').style.display = 'none'; }
+  function eyeshadowClaimsOff() { document.querySelector('#eyeshadowClaims').style.display = 'none'; }
+  function allClaimsOff() {
     foundationClaimsOff();
     eyeshadowClaimsOff();
   }
 
   const defaultColor = function (value) {
-    if (value === "foundation") {
-      console.log ("foundation");
-      colorPicker.value = "#ecba99";
+    if (value === 'foundation') {
+      console.log('foundation');
+      colorPicker.value = '#ecba99';
       document.querySelector('#foundationClaims').style.display = 'block';
       eyeshadowClaimsOff();
-      colorOn (hasColor.checked);
-    } else if (value === 'eyeshadow'){
-      console.log ("eyeshadow");
-      colorPicker.value = "#000000";
-      foundationClaimsOff()
+      colorOn(hasColor.checked);
+    } else if (value === 'eyeshadow') {
+      console.log('eyeshadow');
+      colorPicker.value = '#000000';
+      foundationClaimsOff();
       document.querySelector('#eyeshadowClaims').style.display = 'block';
-      colorOn (hasColor.checked);
-    } else if (value === "concealer") {
-      console.log ("concealer");
-      colorPicker.value = "#ecba99";
+      colorOn(hasColor.checked);
+    } else if (value === 'concealer') {
+      console.log('concealer');
+      colorPicker.value = '#ecba99';
       allClaimsOff();
-      colorOn (hasColor.checked);
-    } else if (value === "primer") {
-      console.log ("primer");
+      colorOn(hasColor.checked);
+    } else if (value === 'primer') {
+      console.log('primer');
       allClaimsOff();
-      colorOff (hasColor.checked);
-    } else{
-      console.log ("other");
+      colorOff(hasColor.checked);
+    } else {
+      console.log('other');
       allClaimsOff();
-      colorPicker.value = "#000000";
-      colorOn (hasColor.checked);
+      colorPicker.value = '#000000';
+      colorOn(hasColor.checked);
     }
   };
 
-    defaultColor(makeupInputs.value);
+  defaultColor(makeupInputs.value);
 
-makeupTypes.forEach(function (element, index){
-  element.addEventListener("click", function(){
-    defaultColor(makeupTypes[index].value)
+  makeupTypes.forEach((element, index) => {
+    element.addEventListener('click', () => {
+      defaultColor(makeupTypes[index].value);
+    });
   });
-});
 
   // good stuff input
   const displayGood = function (checked) {
@@ -168,30 +170,30 @@ makeupTypes.forEach(function (element, index){
 
   displayWarning(warnings.checked);
 
-//review questions
+  // review questions
 
-const displayReview = function (checked) {
-  if (checked) {
-    reviewInputs.style.display = 'block';
-  } else {
-    reviewInputs.style.display = 'none';
-  }
-};
+  const displayReview = function (checked) {
+    if (checked) {
+      reviewInputs.style.display = 'block';
+    } else {
+      reviewInputs.style.display = 'none';
+    }
+  };
 
-hasUsed.addEventListener('change', _changeEvent => {
+  hasUsed.addEventListener('change', _changeEvent => {
+    displayReview(hasUsed.checked);
+  });
+
   displayReview(hasUsed.checked);
-});
 
-displayReview(hasUsed.checked);
-
-  //bad reaction inputs
+  // bad reaction inputs
   const displayBadReaction = function (checked) {
     if (checked) {
       badReaction.style.display = 'block';
     } else {
       badReaction.style.display = 'none';
     }
-  }
+  };
 
   ifBad.addEventListener('change', _changeEvent => {
     displayBadReaction(ifBad.checked);
