@@ -1,5 +1,5 @@
 const http = require('http');
-
+const fs = require('fs');
 const renderPage = function renderPage(res, statusCode, content) {
   res.statusCode = statusCode;
   res.setHeader('Content-Type', 'text/html');
@@ -12,13 +12,25 @@ const renderJSON = function renderJSON(res, statusCode, content) {
   res.end(content);
 };
 
+const renderFile = function renderFile(res, statusCode, filename, mime) {
+  res.statusCode = statusCode;
+  res.setHeader('Content-Type', mime);
+  fs.createReadStream(filename).pipe(res);
+};
+
 const productView = function productView() {
   const products = [
     {id: 4, name: 'Dave\'s Sticky Goop', desc: 'Use at your own risk'},
-    {id: 10, name: 'Green Shampoo', desc: 'There\'s aliens in it'}
+    {id: 10, name: 'Green Shampoo', desc: 'There\'s aliens in it'},
+    {id: 12, name: 'Generic Lip Balm', desc: 'For generic lips!'}
   ];
 
   return JSON.stringify(products);
+}
+
+const staticFiles = {
+  'productList.js': 'text/javascript',
+  'products.css': 'text/css'
 }
 
 const server = http.createServer((req, res) => {
@@ -32,12 +44,22 @@ const aboutView = function aboutView() {
   `;
 }
 
+  if (req.url.slice(1) in staticFiles) {
+    const filename = req.url.slice(1);
+    const mime     = staticFiles[filename];
+
+    renderFile(res, 200, filename, mime);
+    return;
+  }
+
   if (req.url === '/'){
     renderPage(res, 200, 'Hello World\n');
   } else if (req.url === '/about'){
     renderPage(res, 200, aboutView());
   } else if (req.url === '/products'){
-    renderPage(res, 200, productView());
+    renderFile(res, 200, 'products.html', 'text/html');
+  } else if (req.url === '/api/products'){
+    renderJSON(res, 200, productView());
   } else {
     renderPage(res, 404, `There is no page at ${req.url}. 404`);
   }

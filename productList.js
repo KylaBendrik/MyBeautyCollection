@@ -9,7 +9,16 @@ const addTextItem = function addTextItem(list, text) {
 domready(() => {
   const listView = document.querySelector('#productList');
 
+  const handleResponse = products => {
+    for (const product of products){
+      addTextItem(listView, product.name);
+    }
+  };
 
-  addTextItem(listView, 'Some text');
+  fetch('/api/products')
+    .then(response => response.json())
+    .then(handleResponse);
+
+  addTextItem(listView, 'Some text stuff');
   addTextItem(listView, 'Some other text');
 });
