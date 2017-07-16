@@ -12,7 +12,7 @@ const renderJSON = function renderJSON(res, statusCode, content) {
   res.end(content);
 };
 
-const renderFile = function renderFile(res, statusCode, filename, mime) {
+const renderFile = function renderFile(res, statusCode, filename, mime = 'text/html') {
   res.statusCode = statusCode;
   res.setHeader('Content-Type', mime);
   fs.createReadStream(filename).pipe(res);
@@ -30,7 +30,8 @@ const productView = function productView() {
 
 const staticFiles = {
   'productList.js': 'text/javascript',
-  'products.css': 'text/css'
+  'products.css': 'text/css',
+  'main.js': 'text/javascript'
 }
 
 const server = http.createServer((req, res) => {
@@ -53,11 +54,11 @@ const aboutView = function aboutView() {
   }
 
   if (req.url === '/'){
-    renderPage(res, 200, 'Hello World\n');
+    renderFile(res, 200, 'index.html');
   } else if (req.url === '/about'){
     renderPage(res, 200, aboutView());
   } else if (req.url === '/products'){
-    renderFile(res, 200, 'products.html', 'text/html');
+    renderFile(res, 200, 'products.html');
   } else if (req.url === '/api/products'){
     renderJSON(res, 200, productView());
   } else {

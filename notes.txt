@@ -11,3 +11,13 @@ when working on this, open two console windows:
 
 refactoring JS
 webpack
+
+7 requests for a resource
+
+GET /products           // index action
+GET /products/:id       // show action   GET /products/7
+GET /products/new       // new action
+POST /products          // create action
+GET /products/:id/edit  // edit action
+PATCH /products/:id     // update action
+DELETE /products/:id    // delete action
