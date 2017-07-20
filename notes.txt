@@ -24,3 +24,13 @@ DELETE /products/:id    // delete action
 
 beauty
 zuyega
+
+Frameworks:
+  Express - node js framework for doing web apps
+    runs on node, does what we've done, but pulling in more libraries.
+    comes with https built in. Still writing js, still running on node.
+    Might not be as fully featured as could be wished.
+    Node is already on my computer!
+  Rails - Ruby, does probably more than express. Comes with a lot more ways
+    to make things cleaner. Good community support
+  Elixir & Phoenix - His favorite
