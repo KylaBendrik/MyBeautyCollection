@@ -56,7 +56,7 @@ const aboutView = function aboutView() {
   if (req.url === '/'){
     renderFile(res, 200, 'index.html');
   } else if (req.url === '/about'){
-    renderPage(res, 200, aboutView());
+    renderFile(res, 200, 'about.html');
   } else if (req.url === '/products'){
     renderFile(res, 200, 'products.html');
   } else if (req.url === '/api/products'){
