@@ -21,3 +21,6 @@ POST /products          // create action
 GET /products/:id/edit  // edit action
 PATCH /products/:id     // update action
 DELETE /products/:id    // delete action
+
+beauty
+zuyega
